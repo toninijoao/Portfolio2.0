@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio - João Tonini</title>
+  <meta name="description" content="Portfolio de Joao Tonini" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme_snow">
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="noise"></div>
+  </div>
+
+  <button id="themeToggle" class="liquid_glass theme_fab" type="button" data_corner_radius="999" data_padding="10px 14px" aria-label="Trocar tema">
+    <span class="liquid_glass_overlay" aria-hidden="true"></span>
+    <span class="liquid_glass_ripple" aria-hidden="true"></span>
+    <span class="liquid_glass_content">
+      <span class="nav_toggleIcon">☼</span>
+      <span class="nav_toggleText">Dark</span>
+    </span>
+  </button>
+
+  <header class="topbar">
+    <div class="wrap">
+      <nav class="nav_glass glass_box">
+        <a class="nav_home liquid_glass" href="#top" data_corner_radius="999" data_padding="10px 14px" aria-label="Home">
+          <span class="liquid_glass_overlay" aria-hidden="true"></span>
+          <span class="liquid_glass_ripple" aria-hidden="true"></span>
+          <span class="liquid_glass_content">⌂</span>
+        </a>
+
+        <div class="nav_links">
+          <a class="liquid_glass" href="#about" data_corner_radius="999" data_padding="10px 14px">
+            <span class="liquid_glass_overlay" aria-hidden="true"></span>
+            <span class="liquid_glass_ripple" aria-hidden="true"></span>
+            <span class="liquid_glass_content">About Me</span>
+          </a>
+
+          <a class="liquid_glass" href="#stack" data_corner_radius="999" data_padding="10px 14px">
+            <span class="liquid_glass_overlay" aria-hidden="true"></span>
+            <span class="liquid_glass_ripple" aria-hidden="true"></span>
+            <span class="liquid_glass_content">Stack</span>
+          </a>
+
+          <a class="liquid_glass" href="#projects" data_corner_radius="999" data_padding="10px 14px">
+            <span class="liquid_glass_overlay" aria-hidden="true"></span>
+            <span class="liquid_glass_ripple" aria-hidden="true"></span>
+            <span class="liquid_glass_content">Projects</span>
+          </a>
+
+          <a class="liquid_glass" href="/cv.pdf" target="_blank" rel="noreferrer" data_corner_radius="999" data_padding="10px 14px">
+            <span class="liquid_glass_overlay" aria-hidden="true"></span>
+            <span class="liquid_glass_ripple" aria-hidden="true"></span>
+            <span class="liquid_glass_content">Resume</span>
+          </a>
+
+          <a class="liquid_glass" href="#contact" data_corner_radius="999" data_padding="10px 14px">
+            <span class="liquid_glass_overlay" aria-hidden="true"></span>
+            <span class="liquid_glass_ripple" aria-hidden="true"></span>
+            <span class="liquid_glass_content">Contact</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <h1 class="nome nome_animada" aria-label="João Tonini"><span>J</span><span>o</span><span>ã</span><span>o</span><span class="espaco">&nbsp;</span><span>T</span><span>o</span><span>n</span><span>i</span><span>n</span><span>i</span></h1>
+      <p class="cargo">Software &amp; AI Engineer</p>
+
+      <div class="avatar">
+        <img class="avatar_img" src="assets/emoji.png" alt="Avatar de João Tonini" width="420" height="420" decoding="async" />
+      </div>
+
+      <p class="frase">Excellence is not an act, but a habit</p>
+
+      <div class="classes_hero">
+        <a class="card_classe glass_box" href="#about">
+          <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">person_2</span></div>
+          <div class="classe_titulo">About Me</div>
+          <div class="classe_desc">My Story</div>
+        </a>
+
+        <a class="card_classe glass_box" href="#stack">
+          <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">stacks</span></div>
+          <div class="classe_titulo">Stack</div>
+          <div class="classe_desc">Tools</div>
+        </a>
+
+        <a class="card_classe glass_box" href="#projects">
+          <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">folder_code</span></div>
+          <div class="classe_titulo">Projects</div>
+          <div class="classe_desc">My Work</div>
+        </a>
+
+        <a class="card_classe glass_box" href="/cv.pdf" target="_blank" rel="noreferrer">
+          <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">assignment</span></div>
+          <div class="classe_titulo">Resume</div>
+          <div class="classe_desc">Download CV</div>
+        </a>
+
+        <a class="card_classe glass_box" href="#contact">
+          <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">call</span></div>
+          <div class="classe_titulo">Contact</div>
+          <div class="classe_desc">Get in Touch</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="nav_sentinel" aria-hidden="true"></div>
+
+    <section id="about" class="section">
+      <p class="glass_chamada glass_chip">PROFILE · ABOUT</p>
+      <h2 class="h2">About Me</h2>
+
+      <div class="about">
+        <div class="about_foto">
+          <img
+            class="about_foto_img"
+            src="assets/foto_about.jpg"
+            alt="João Tonini"
+            width="900"
+            height="1200"
+            decoding="async"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="about_texto">
+          <p>
+            I’m a Junior Software and AI Engineer currently pursuing a Bachelor's degree in
+            Software Engineering (third semester). I’m passionate about using technology to
+            simplify everyday life and bring innovation to people and businesses.
+          </p>
+
+          <p>
+            I have experience developing SaaS solutions for companies and am currently
+            deepening my expertise in AI Engineering, focusing on LLMs, RAG, and LangChain.
+            I believe in team alignment and collaboration, ensuring everyone shares the same
+            determination and drive for success that I bring to every project I’m part of.
+          </p>
+
+          <h3 class="competencias_titulo">Core Competencies:</h3>
+
+          <ul class="competencias_lista muted">
+            <li>
+              <span class="material-symbols-outlined comp_icon blue" aria-hidden="true">code</span>
+              <span>Building end-to-end solutions in Python using LLMs, as well as RAG and LangChain applications.</span>
+            </li>
+
+            <li>
+              <span class="material-symbols-outlined comp_icon orange" aria-hidden="true">smart_toy</span>
+              <span>Creating intelligent systems with applied AI to automate processes.</span>
+            </li>
+
+            <li>
+              <span class="material-symbols-outlined comp_icon purple" aria-hidden="true">groups</span>
+              <span>Providing technical leadership by managing the backlog, delegating tasks, and aligning with stakeholders.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <p class="glass_chamada glass_chip">SKILLS · TECHS</p>
+      <h2 class="h2">Stack</h2>
+      <p class="sub">Tools and technologies I use to develop.</p>
+
+      <h3 class="h3">Backend</h3>
+      <div class="grid">
+        <div class="stack_card glass_box"><span>Python</span></div>
+        <div class="stack_card glass_box"><span>C</span></div>
+        <div class="stack_card glass_box"><span>Node.js</span></div>
+        <div class="stack_card glass_box"><span>SQL</span></div>
+      </div>
+
+      <h3 class="h3">Frontend</h3>
+      <div class="grid">
+        <div class="stack_card glass_box"><span>HTML</span></div>
+        <div class="stack_card glass_box"><span>CSS</span></div>
+        <div class="stack_card glass_box"><span>JavaScript</span></div>
+        <div class="stack_card glass_box"><span>TypeScript</span></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <p class="glass_chamada glass_chip">CASE STUDIES · PROJECTS</p>
+      <h2 class="h2">Personal Work</h2>
+      <p class="sub">A portfolio of projects that showcases my interest in building impactful digital solutions.</p>
+
+      <div class="projects">
+        <article class="project glass_box">
+          <div class="project_media">
+            <img src="assets/pirabeach.png" alt="PiraBeach Arena" />
+          </div>
+
+          <div class="project_body">
+            <div class="project_top">
+              <span class="dot"></span>
+              <span class="badge">CLIENT PROJECT</span>
+              <span class="case">CASE 01</span>
+            </div>
+
+            <h3 class="project_titulo">PiraBeach Arena</h3>
+            <p class="project_desc">O PiraBeach Arena é um site para reserva online de quadras de beach tennis. Nele, os usuários podem visualizar horários disponíveis e solicitar reservas de forma rápida. O sistema também possui um painel administrativo para gerenciamento das reservas.</p>
+
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Vite</span>
+            </div>
+
+            <div class="project_acoes">
+              <a class="liquid_glass btn" href="https://pirabeach.vercel.app/" target="_blank" rel="noreferrer" data_corner_radius="999" data_padding="10px 14px">
+                <span class="liquid_glass_overlay" aria-hidden="true"></span>
+                <span class="liquid_glass_ripple" aria-hidden="true"></span>
+                <span class="liquid_glass_content">Visit Site ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project glass_box">
+          <div class="project_media"></div>
+          <div class="project_body">
+            <div class="project_top">
+              <span class="dot"></span>
+              <span class="badge">OPEN SOURCE</span>
+              <span class="case">CASE 02</span>
+            </div>
+
+            <h3 class="project_titulo">Outro Projeto</h3>
+            <p class="project_desc">Descrição curta do projeto (3–5 linhas).</p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+
+            <div class="project_acoes">
+              <a class="liquid_glass btn" href="#" target="_blank" rel="noreferrer" data_corner_radius="999" data_padding="10px 14px">
+                <span class="liquid_glass_overlay" aria-hidden="true"></span>
+                <span class="liquid_glass_ripple" aria-hidden="true"></span>
+                <span class="liquid_glass_content">Visit Site ↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="glass_chamada glass_chip">CONNECT · CONTACT</p>
+      <h2 class="h2">Contact Me</h2>
+      <p class="sub">Let's connect and work together</p>
+
+      <div class="contact_cards">
+        <a class="contact_card glass_box" href="https://www.linkedin.com/in/joaopansanato/" target="_blank" rel="noreferrer">
+          <div class="contact_icon">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </div>
+          <div class="contact_text">
+            <div class="contact_titulo">LinkedIn</div>
+            <div class="contact_sub">linkedin.com/in/joaopansanato</div>
+          </div>
+        </a>
+
+        <a class="contact_card glass_box" href="mailto:jfpansanatotonini@gmail.com">
+          <div class="contact_icon">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+          </div>
+          <div class="contact_text">
+            <div class="contact_titulo">Email</div>
+            <div class="contact_sub">jfpansanatotonini@gmail.com</div>
+          </div>
+        </a>
+
+        <a class="contact_card glass_box" href="/cv.pdf" target="_blank" rel="noreferrer">
+          <div class="contact_icon">
+            <span class="material-symbols-outlined" aria-hidden="true">description</span>
+          </div>
+          <div class="contact_text">
+            <div class="contact_titulo">Resume</div>
+            <div class="contact_sub">View my resume</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> João Tonini</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+  <script type="module" src="cursor.js"></script>
+
+</body>
+</html>
