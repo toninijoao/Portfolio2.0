@@ -111,7 +111,7 @@ window.addEventListener("themechange", applyCursorTheme);
     buildCursor();
 
     setEffectSize({
-      lerp: 0.62,
+      lerp: .7,
       noise: 0.01,
       bloomRadius: 0.018,
       xRadius: 0.06,
@@ -120,7 +120,7 @@ window.addEventListener("themechange", applyCursorTheme);
 
     setEffectNeon({
       lightIntensity: 200,
-      bloomStrength: 0.34,
+      bloomStrength: 0.25,
       bloomThreshold: 0.08,
       tubeColors: ["#5e72e4", "#8b5cf6", "#ff4d6d"],
       lightColors: ["#22d3ee", "#b721ff", "#ffd166", "#11cdef"]

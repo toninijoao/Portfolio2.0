@@ -1,6 +1,4 @@
-const avatar = document.getElementById("avatarFx");
-
-if (avatar) {
+document.querySelectorAll(".image_fx").forEach((element) => {
   let currentX = 0;
   let currentY = 0;
   let targetX = 0;
@@ -19,17 +17,18 @@ if (avatar) {
     currentX += (targetX - currentX) * 0.12;
     currentY += (targetY - currentY) * 0.12;
 
-    avatar.style.transform = `perspective(1200px) rotateX(${currentY}deg) rotateY(${currentX}deg) scale3d(1.02, 1.02, 1.02)`;
+    element.style.transform =
+      `perspective(1200px) rotateX(${currentY}deg) rotateY(${currentX}deg) scale3d(1.02, 1.02, 1.02)`;
 
     rafId = requestAnimationFrame(animate);
   };
 
-  avatar.addEventListener("pointerenter", () => {
+  element.addEventListener("pointerenter", () => {
     isHovering = true;
   });
 
-  avatar.addEventListener("pointermove", (e) => {
-    const rect = avatar.getBoundingClientRect();
+  element.addEventListener("pointermove", (e) => {
+    const rect = element.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width;
     const py = (e.clientY - rect.top) / rect.height;
 
@@ -37,7 +36,7 @@ if (avatar) {
     targetY = (0.5 - py) * 18;
   });
 
-  avatar.addEventListener("pointerleave", () => {
+  element.addEventListener("pointerleave", () => {
     isHovering = false;
     targetX = 0;
     targetY = 0;
@@ -48,4 +47,4 @@ if (avatar) {
   window.addEventListener("beforeunload", () => {
     cancelAnimationFrame(rafId);
   }, { once: true });
-}
+});

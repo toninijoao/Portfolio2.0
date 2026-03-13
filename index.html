@@ -20,14 +20,15 @@
     <div class="noise"></div>
   </div>
 
-  <button id="themeToggle" class="liquid_glass theme_fab" type="button" data_corner_radius="999" data_padding="10px 14px" aria-label="Trocar tema">
-    <span class="liquid_glass_overlay" aria-hidden="true"></span>
-    <span class="liquid_glass_ripple" aria-hidden="true"></span>
-    <span class="liquid_glass_content">
-      <span class="nav_toggleIcon">☼</span>
-      <span class="nav_toggleText">Dark</span>
+  <button id="themeToggle" class="theme_toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+  <span class="theme_toggle_inner">
+    <span class="theme_toggle_icon theme_toggle_icon-sun" aria-hidden="true">☀</span>
+
+    <span class="theme_toggle_icon theme_toggle_icon-moon" aria-hidden="true">
+      <span class="material-symbols-outlined">dark_mode</span>
     </span>
-  </button>
+  </span>
+</button>
 
   <header class="topbar">
     <div class="wrap">
@@ -35,7 +36,7 @@
         <a class="nav_home liquid_glass" href="#top" data_corner_radius="999" data_padding="10px 14px" aria-label="Home">
           <span class="liquid_glass_overlay" aria-hidden="true"></span>
           <span class="liquid_glass_ripple" aria-hidden="true"></span>
-          <span class="liquid_glass_content">⌂</span>
+          <span class="liquid_glass_content"><i class="fa-solid fa-house"></i></span>
         </a>
 
         <div class="nav_links">
@@ -57,11 +58,7 @@
             <span class="liquid_glass_content">Projects</span>
           </a>
 
-          <a class="liquid_glass" href="/cv.pdf" target="_blank" rel="noreferrer" data_corner_radius="999" data_padding="10px 14px">
-            <span class="liquid_glass_overlay" aria-hidden="true"></span>
-            <span class="liquid_glass_ripple" aria-hidden="true"></span>
-            <span class="liquid_glass_content">Resume</span>
-          </a>
+          
 
           <a class="liquid_glass" href="#contact" data_corner_radius="999" data_padding="10px 14px">
             <span class="liquid_glass_overlay" aria-hidden="true"></span>
@@ -78,7 +75,7 @@
       <h1 class="nome nome_animada" aria-label="João Tonini"><span>J</span><span>o</span><span>ã</span><span>o</span><span class="espaco">&nbsp;</span><span>T</span><span>o</span><span>n</span><span>i</span><span>n</span><span>i</span></h1>
       <p class="cargo">Software &amp; AI Engineer</p>
 
-      <div class="avatar" id="avatarFx">
+      <div class="avatar image_fx" id="avatarFx">
         <span class="avatar_halo" aria-hidden="true"></span>
         <span class="avatar_nebula" aria-hidden="true"></span>
         <img
@@ -94,31 +91,25 @@
       <p class="frase">Excellence is not an act, but a habit</p>
 
       <div class="classes_hero">
-        <a class="card_classe glass_box" href="#about">
+        <a id="btn-about" class="card_classe glass_box botao_fx" href="#about">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">person_2</span></div>
           <div class="classe_titulo">About Me</div>
           <div class="classe_desc">My Story</div>
         </a>
 
-        <a class="card_classe glass_box" href="#stack">
+        <a id="btn-stack" class="card_classe glass_box botao_fx" href="#stack">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">stacks</span></div>
           <div class="classe_titulo">Stack</div>
           <div class="classe_desc">Tools</div>
         </a>
 
-        <a class="card_classe glass_box" href="#projects">
+        <a id="btn-projects" class="card_classe glass_box botao_fx" href="#projects">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">folder_code</span></div>
           <div class="classe_titulo">Projects</div>
           <div class="classe_desc">My Work</div>
         </a>
 
-        <a class="card_classe glass_box" href="/cv.pdf" target="_blank" rel="noreferrer">
-          <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">assignment</span></div>
-          <div class="classe_titulo">Resume</div>
-          <div class="classe_desc">Download CV</div>
-        </a>
-
-        <a class="card_classe glass_box" href="#contact">
+        <a id="btn-contact" class="card_classe glass_box botao_fx" href="#contact">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">call</span></div>
           <div class="classe_titulo">Contact</div>
           <div class="classe_desc">Get in Touch</div>
@@ -133,7 +124,7 @@
       <h2 class="h2">About Me</h2>
 
       <div class="about">
-        <div class="about_foto">
+        <div class="about_foto image_fx">
           <img
             class="about_foto_img"
             src="assets/foto_about.jpg"
@@ -187,20 +178,66 @@
       <p class="sub">Tools and technologies I use to develop.</p>
 
       <h3 class="h3">Backend</h3>
-      <div class="grid">
-        <div class="stack_card glass_box"><span>Python</span></div>
-        <div class="stack_card glass_box"><span>C</span></div>
-        <div class="stack_card glass_box"><span>Node.js</span></div>
-        <div class="stack_card glass_box"><span>SQL</span></div>
-      </div>
+<div class="grid">
+  <div id="btn-python" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <i class="fa-brands fa-python" aria-hidden="true"></i>
+      <span>Python</span>
+    </span>
+  </div>
 
-      <h3 class="h3">Frontend</h3>
-      <div class="grid">
-        <div class="stack_card glass_box"><span>HTML</span></div>
-        <div class="stack_card glass_box"><span>CSS</span></div>
-        <div class="stack_card glass_box"><span>JavaScript</span></div>
-        <div class="stack_card glass_box"><span>TypeScript</span></div>
-      </div>
+  <div id="btn-c" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <i class="fa-solid fa-c" aria-hidden="true"></i>
+      <span>C</span>
+    </span>
+  </div>
+
+  <div id="btn-node" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <i class="fa-brands fa-node-js" aria-hidden="true"></i>
+      <span>Node.js</span>
+    </span>
+  </div>
+
+  <div id="btn-sql" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <span class="material-symbols-outlined" aria-hidden="true">sql</span>
+      <span>SQL</span>
+    </span>
+  </div>
+</div>
+
+<h3 class="h3">Frontend</h3>
+<div class="grid">
+  <div id="btn-html" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <i class="fa-brands fa-html5" aria-hidden="true"></i>
+      <span>HTML</span>
+    </span>
+  </div>
+
+  <div id="btn-css" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+      <span>CSS</span>
+    </span>
+  </div>
+
+  <div id="btn-javascript" class="stack_card glass_box botao_fx">
+    <span class="icone_linguagem">
+      <i class="fa-brands fa-js" aria-hidden="true"></i>
+      <span>JavaScript</span>
+    </span>
+  </div>
+
+  <div id="btn-typescript" class="stack_card glass_box botao_fx">
+  <span class="icone_linguagem">
+    <span class="ts_logo" aria-hidden="true">TS</span>
+    <span>TypeScript</span>
+  </span>
+</div>
+</div>
     </section>
 
     <section id="projects" class="section">
@@ -277,7 +314,7 @@
       <p class="sub">Let's connect and work together</p>
 
       <div class="contact_cards">
-        <a class="contact_card glass_box" href="https://www.linkedin.com/in/joaopansanato/" target="_blank" rel="noreferrer">
+        <a id="btn-linkedin" class="contact_card glass_box botao_fx" href="https://www.linkedin.com/in/joaopansanato/" target="_blank" rel="noreferrer">
           <div class="contact_icon">
             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
           </div>
@@ -287,7 +324,7 @@
           </div>
         </a>
 
-        <a class="contact_card glass_box" href="mailto:jfpansanatotonini@gmail.com">
+        <a id="btn-email" class="contact_card glass_box botao_fx" href="mailto:jfpansanatotonini@gmail.com">
           <div class="contact_icon">
             <span class="material-symbols-outlined" aria-hidden="true">mail</span>
           </div>
@@ -297,7 +334,7 @@
           </div>
         </a>
 
-        <a class="contact_card glass_box" href="/cv.pdf" target="_blank" rel="noreferrer">
+        <a id="btn-resume" class="contact_card glass_box botao_fx" href="/cv.pdf" target="_blank" rel="noreferrer">
           <div class="contact_icon">
             <span class="material-symbols-outlined" aria-hidden="true">description</span>
           </div>
@@ -316,6 +353,7 @@
 
   <script src="script.js" defer></script>
   <script type="module" src="cursor.js"></script>
-  <script type="module" src="avatar.js"></script>
+  <script type="module" src="image_fx.js"></script>
+  <script type="module" src="botao_fx.js"></script>
 </body>
 </html>
