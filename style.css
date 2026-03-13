@@ -685,7 +685,11 @@ body.theme_snow .muted{ color: rgba(15,18,32,.58); }
   line-height: 1.2;
   font-weight: 800;
   text-align: left;
-  color: #111827;
+  color: #CBCBCD;
+}
+
+body.theme_snow .competencias_titulo{
+  color: #3C404A;
 }
 
 .competencias_lista {
