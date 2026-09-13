@@ -763,6 +763,20 @@ body.theme_snow .stack_card{ color: rgba(15,18,32,.78); }
 .project{
   overflow:hidden;
   border-radius: 24px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease;
+  will-change: transform;
+}
+
+.project:hover{
+  transform: translateY(-6px) scale(1.025);
+  z-index: 5;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+body.theme_snow .project:hover{
+  box-shadow: 0 24px 60px rgba(15, 18, 32, 0.12);
+  border-color: rgba(15, 18, 32, 0.18);
 }
 
 .project_media{
@@ -779,6 +793,11 @@ body.theme_snow .stack_card{ color: rgba(15,18,32,.78); }
   display: block;
   object-fit: cover;
   object-position: center top;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project:hover .project_media img {
+  transform: scale(1.04);
 }
 
 body.theme_snow .project_media{
@@ -837,8 +856,24 @@ body.theme_snow .tag{
   color: rgba(15,18,32,.70);
 }
 
-.project_acoes{ display:flex; gap: 10px; align-items:center; padding-top: 14px; }
-.btn{ font-weight: 650; }
+.project_acoes{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 14px;
+}
+
+.project_btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
 
 .contact{ text-align:center; }
 
@@ -1033,7 +1068,8 @@ p.glass_chamada.glass_chip{
 body.theme_snow #btn-about,
 body.theme_snow #btn-stack,
 body.theme_snow #btn-projects,
-body.theme_snow #btn-contact{
+body.theme_snow #btn-contact,
+body.theme_snow .project_btn{
   --btn-fill: #111111;
   --btn-text: rgba(15,18,32,.88);
   --btn-text-hover: #ffffff;
@@ -1062,8 +1098,9 @@ body.theme_snow .botao_fx{
   z-index: 0;
   border-radius: 999px;
   background: var(--btn-fill);
-  transform: translate(150%, 150%) scale(2.5);
-  transition: transform 1s cubic-bezier(.22,1,.36,1);
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.65s cubic-bezier(.22, 1, .36, 1);
   pointer-events: none;
 }
 
@@ -1074,7 +1111,7 @@ body.theme_snow .botao_fx{
 }
 
 .botao_fx:hover .botao_fx_fill{
-  transform: translate(0%, 0%) scale(2.5);
+  transform: scale(2.8);
 }
 
 .botao_fx:active{
@@ -1083,7 +1120,8 @@ body.theme_snow .botao_fx{
 
 .card_classe.botao_fx,
 .stack_card.botao_fx,
-.contact_card.botao_fx{
+.contact_card.botao_fx,
+.project_btn.botao_fx{
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
 }
@@ -1122,10 +1160,32 @@ body.theme_snow .botao_fx{
   color: var(--btn-text-hover);
 }
 
+.project_btn.botao_fx{
+  transition:
+    transform .8s ease,
+    color .8s ease,
+    border-color .8s ease,
+    background-color .8s ease;
+}
+
+.project_btn.botao_fx .botao_fx_fill{
+  transition: transform 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+.project_btn.botao_fx span{
+  color: var(--btn-text);
+  transition: color .8s ease;
+}
+
+.project_btn.botao_fx:hover span{
+  color: var(--btn-text-hover);
+}
+
 #btn-about,
 #btn-stack,
 #btn-projects,
-#btn-contact{
+#btn-contact,
+.project_btn{
   --btn-fill: #ffffff;
   --btn-text: rgba(255,255,255,.88);
   --btn-text-hover: #000000;
