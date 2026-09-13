@@ -6,7 +6,17 @@
   <title>João Tonini | Portfólio</title>
   <meta name="description" content="Portfolio de Joao Tonini" />
   <script>
-    document.documentElement.setAttribute("data-theme", "light");
+    (function() {
+      try {
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        const storedLang = localStorage.getItem("lang");
+        const navLang = (navigator.language || "").toLowerCase();
+        const lang = storedLang || (navLang.startsWith("pt") ? "pt" : "en");
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang === "en" ? "en" : "pt-BR");
+      } catch (e) {}
+    })();
   </script>
   <link rel="icon" href="./assets/emoji.png" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -21,15 +31,27 @@
     <div class="noise"></div>
   </div>
 
-  <button id="themeToggle" class="theme_toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
-  <span class="theme_toggle_inner">
-    <span class="theme_toggle_icon theme_toggle_icon-sun" aria-hidden="true">☀</span>
+  <div class="top_actions">
+    <button id="langToggle" class="action_toggle lang_toggle" type="button" aria-label="Alternar idioma" aria-pressed="false">
+      <span class="action_toggle_inner">
+        <span class="lang_toggle_icon lang_toggle_icon-br" aria-hidden="true">
+          <img src="assets/flag_br.png" alt="Brasil" width="26" height="26" class="flag_emoji_img" />
+        </span>
+        <span class="lang_toggle_icon lang_toggle_icon-us" aria-hidden="true">
+          <img src="assets/flag_us.png" alt="USA" width="26" height="26" class="flag_emoji_img" />
+        </span>
+      </span>
+    </button>
 
-    <span class="theme_toggle_icon theme_toggle_icon-moon" aria-hidden="true">
-      <span class="material-symbols-outlined">dark_mode</span>
-    </span>
-  </span>
-</button>
+    <button id="themeToggle" class="action_toggle theme_toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+      <span class="action_toggle_inner theme_toggle_inner">
+        <span class="theme_toggle_icon theme_toggle_icon-sun" aria-hidden="true">☀</span>
+        <span class="theme_toggle_icon theme_toggle_icon-moon" aria-hidden="true">
+          <span class="material-symbols-outlined">dark_mode</span>
+        </span>
+      </span>
+    </button>
+  </div>
 
   <header class="topbar">
     <div class="wrap">
@@ -44,27 +66,25 @@
           <a class="liquid_glass" href="#about" data_corner_radius="999" data_padding="10px 14px">
             <span class="liquid_glass_overlay" aria-hidden="true"></span>
             <span class="liquid_glass_ripple" aria-hidden="true"></span>
-            <span class="liquid_glass_content">About Me</span>
+            <span class="liquid_glass_content" data-i18n="nav_about">About Me</span>
           </a>
 
           <a class="liquid_glass" href="#stack" data_corner_radius="999" data_padding="10px 14px">
             <span class="liquid_glass_overlay" aria-hidden="true"></span>
             <span class="liquid_glass_ripple" aria-hidden="true"></span>
-            <span class="liquid_glass_content">Stack</span>
+            <span class="liquid_glass_content" data-i18n="nav_stack">Stack</span>
           </a>
 
           <a class="liquid_glass" href="#projects" data_corner_radius="999" data_padding="10px 14px">
             <span class="liquid_glass_overlay" aria-hidden="true"></span>
             <span class="liquid_glass_ripple" aria-hidden="true"></span>
-            <span class="liquid_glass_content">Projects</span>
+            <span class="liquid_glass_content" data-i18n="nav_projects">Projects</span>
           </a>
-
-          
 
           <a class="liquid_glass" href="#contact" data_corner_radius="999" data_padding="10px 14px">
             <span class="liquid_glass_overlay" aria-hidden="true"></span>
             <span class="liquid_glass_ripple" aria-hidden="true"></span>
-            <span class="liquid_glass_content">Contact</span>
+            <span class="liquid_glass_content" data-i18n="nav_contact">Contact</span>
           </a>
         </div>
       </nav>
@@ -89,31 +109,31 @@
         />
       </div>
 
-      <p class="frase">Excellence is not an act, but a habit</p>
+      <p class="frase" data-i18n="hero_frase">Excellence is not an act, but a habit</p>
 
       <div class="classes_hero">
         <a id="btn-about" class="card_classe glass_box botao_fx" href="#about">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">person_2</span></div>
-          <div class="classe_titulo">About Me</div>
-          <div class="classe_desc">My Story</div>
+          <div class="classe_titulo" data-i18n="hero_card_about_title">About Me</div>
+          <div class="classe_desc" data-i18n="hero_card_about_desc">My Story</div>
         </a>
 
         <a id="btn-stack" class="card_classe glass_box botao_fx" href="#stack">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">stacks</span></div>
-          <div class="classe_titulo">Stack</div>
-          <div class="classe_desc">Tools</div>
+          <div class="classe_titulo" data-i18n="hero_card_stack_title">Stack</div>
+          <div class="classe_desc" data-i18n="hero_card_stack_desc">Tools</div>
         </a>
 
         <a id="btn-projects" class="card_classe glass_box botao_fx" href="#projects">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">folder_code</span></div>
-          <div class="classe_titulo">Projects</div>
-          <div class="classe_desc">My Work</div>
+          <div class="classe_titulo" data-i18n="hero_card_projects_title">Projects</div>
+          <div class="classe_desc" data-i18n="hero_card_projects_desc">My Work</div>
         </a>
 
         <a id="btn-contact" class="card_classe glass_box botao_fx" href="#contact">
           <div class="classe_icone"><span class="material-symbols-outlined" aria-hidden="true">call</span></div>
-          <div class="classe_titulo">Contact</div>
-          <div class="classe_desc">Get in Touch</div>
+          <div class="classe_titulo" data-i18n="hero_card_contact_title">Contact</div>
+          <div class="classe_desc" data-i18n="hero_card_contact_desc">Get in Touch</div>
         </a>
       </div>
     </section>
@@ -121,8 +141,8 @@
     <div id="nav_sentinel" aria-hidden="true"></div>
 
     <section id="about" class="section">
-      <p class="glass_chamada glass_chip">PROFILE · ABOUT</p>
-      <h2 class="h2">About Me</h2>
+      <p class="glass_chamada glass_chip" data-i18n="about_chip">PROFILE · ABOUT</p>
+      <h2 class="h2" data-i18n="about_title">About Me</h2>
 
       <div class="about">
         <div class="about_foto image_fx">
@@ -138,35 +158,35 @@
         </div>
 
         <div class="about_texto">
-          <p>
+          <p data-i18n="about_p1">
             I’m a Junior Software and AI Engineer currently pursuing a Bachelor's degree in
             Software Engineering (third semester). I’m passionate about using technology to
             simplify everyday life and bring innovation to people and businesses.
           </p>
 
-          <p>
+          <p data-i18n="about_p2">
             I have experience developing SaaS solutions for companies and am currently
             deepening my expertise in AI Engineering, focusing on LLMs, RAG, and LangChain.
             I believe in team alignment and collaboration, ensuring everyone shares the same
             determination and drive for success that I bring to every project I’m part of.
           </p>
 
-          <h3 class="competencias_titulo">Core Competencies:</h3>
+          <h3 class="competencias_titulo" data-i18n="about_competencies_title">Core Competencies:</h3>
 
           <ul class="competencias_lista muted">
             <li>
               <span class="material-symbols-outlined comp_icon blue" aria-hidden="true">code</span>
-              <span>Building end-to-end solutions in Python using LLMs, as well as RAG and LangChain applications.</span>
+              <span data-i18n="about_comp1">Building end-to-end solutions in Python using LLMs, as well as RAG and LangChain applications.</span>
             </li>
 
             <li>
               <span class="material-symbols-outlined comp_icon orange" aria-hidden="true">smart_toy</span>
-              <span>Creating intelligent systems with applied AI to automate processes.</span>
+              <span data-i18n="about_comp2">Creating intelligent systems with applied AI to automate processes.</span>
             </li>
 
             <li>
               <span class="material-symbols-outlined comp_icon purple" aria-hidden="true">groups</span>
-              <span>Providing technical leadership by managing the backlog, delegating tasks, and aligning with stakeholders.</span>
+              <span data-i18n="about_comp3">Providing technical leadership by managing the backlog, delegating tasks, and aligning with stakeholders.</span>
             </li>
           </ul>
         </div>
@@ -174,9 +194,9 @@
     </section>
 
     <section id="stack" class="section">
-      <p class="glass_chamada glass_chip">SKILLS · TECHS</p>
-      <h2 class="h2">Stack</h2>
-      <p class="sub">Tools and technologies I use to develop.</p>
+      <p class="glass_chamada glass_chip" data-i18n="stack_chip">SKILLS · TECHS</p>
+      <h2 class="h2" data-i18n="stack_title">Stack</h2>
+      <p class="sub" data-i18n="stack_sub">Tools and technologies I use to develop.</p>
 
       <h3 class="h3">Backend</h3>
 <div class="grid">
@@ -242,9 +262,9 @@
     </section>
 
     <section id="projects" class="section">
-      <p class="glass_chamada glass_chip">CASE STUDIES · PROJECTS</p>
-      <h2 class="h2">Personal Work</h2>
-      <p class="sub">A portfolio of projects that showcases my interest in building impactful digital solutions.</p>
+      <p class="glass_chamada glass_chip" data-i18n="projects_chip">CASE STUDIES · PROJECTS</p>
+      <h2 class="h2" data-i18n="projects_title">Personal Work</h2>
+      <p class="sub" data-i18n="projects_sub">A portfolio of projects that showcases my interest in building impactful digital solutions.</p>
 
       <div class="projects">
         <article class="project glass_box">
@@ -255,12 +275,12 @@
           <div class="project_body">
             <div class="project_top">
               <span class="dot"></span>
-              <span class="badge">CLIENT PROJECT</span>
+              <span class="badge" data-i18n="project_badge">CLIENT PROJECT</span>
               <span class="case">CASE 01</span>
             </div>
 
             <h3 class="project_titulo">PiraBeach Arena</h3>
-            <p class="project_desc">O PiraBeach Arena é um site para reserva online de quadras de beach tennis. Nele, os usuários podem visualizar horários disponíveis e solicitar reservas de forma rápida. O sistema também possui um painel administrativo para gerenciamento das reservas.</p>
+            <p class="project_desc" data-i18n="project_desc_pirabeach">O PiraBeach Arena é um site para reserva online de quadras de beach tennis. Nele, os usuários podem visualizar horários disponíveis e solicitar reservas de forma rápida. O sistema também possui um painel administrativo para gerenciamento das reservas.</p>
 
             <div class="tags">
               <span class="tag">React</span>
@@ -271,7 +291,7 @@
 
             <div class="project_acoes">
               <a class="project_btn glass_box botao_fx" href="https://pirabeach.vercel.app/" target="_blank" rel="noreferrer">
-                <span>Visit Site ↗</span>
+                <span data-i18n="project_btn_visit">Visit Site ↗</span>
               </a>
             </div>
           </div>
@@ -281,9 +301,9 @@
     </section>
 
     <section id="contact" class="section contact">
-      <p class="glass_chamada glass_chip">CONNECT · CONTACT</p>
-      <h2 class="h2">Contact Me</h2>
-      <p class="sub">Let's connect and work together</p>
+      <p class="glass_chamada glass_chip" data-i18n="contact_chip">CONNECT · CONTACT</p>
+      <h2 class="h2" data-i18n="contact_title">Contact Me</h2>
+      <p class="sub" data-i18n="contact_sub">Let's connect and work together</p>
 
       <div class="contact_cards">
         <a id="btn-linkedin" class="contact_card glass_box botao_fx" href="https://www.linkedin.com/in/joaopansanato/" target="_blank" rel="noreferrer">
@@ -311,8 +331,8 @@
             <span class="material-symbols-outlined" aria-hidden="true">description</span>
           </div>
           <div class="contact_text">
-            <div class="contact_titulo">Resume</div>
-            <div class="contact_sub">View my resume</div>
+            <div class="contact_titulo" data-i18n="contact_resume_title">Resume</div>
+            <div class="contact_sub" data-i18n="contact_resume_sub">View my resume</div>
           </div>
         </a>
       </div>
@@ -323,7 +343,7 @@
     </footer>
   </main>
 
-  <script src="script.js" defer></script>
+  <script type="module" src="script.js"></script>
   <script type="module" src="cursor.js"></script>
   <script type="module" src="imagem_fx.js"></script>
   <script type="module" src="botao_fx.js"></script>

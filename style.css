@@ -334,11 +334,17 @@ body.theme_snow .liquid_glass_overlay{
 .nav_links{ display:flex; gap: 10px; }
 .nav_home{ width: 42px; justify-content:center; }
 
-.theme_toggle{
+.top_actions{
   position: fixed;
   top: 16px;
   right: 16px;
   z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action_toggle{
   width: 56px;
   height: 56px;
   border: 1px solid var(--border);
@@ -353,14 +359,63 @@ body.theme_snow .liquid_glass_overlay{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: transform .25s ease, border-color .25s ease, background-color .25s ease;
+  position: relative;
+  padding: 0;
 }
 
-.theme_toggle:hover{
+.action_toggle:hover{
   transform: translateY(-2px) scale(1.03);
 }
 
-.theme_toggle:active{
+.action_toggle:active{
   transform: scale(.96);
+}
+
+.action_toggle_inner{
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.flag_emoji_img{
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.lang_toggle_icon{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition: transform .35s ease, opacity .35s ease, rotate .35s ease;
+}
+
+/* Default / PT active: Shows BR flag */
+.lang_toggle_icon-br{
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.lang_toggle_icon-us{
+  opacity: 0;
+  transform: scale(.6) rotate(-45deg);
+}
+
+/* When EN is active: Shows US flag */
+html[data-lang="en"] .lang_toggle_icon-br{
+  opacity: 0;
+  transform: scale(.6) rotate(45deg);
+}
+
+html[data-lang="en"] .lang_toggle_icon-us{
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .theme_toggle_inner{
@@ -416,9 +471,12 @@ html[data-theme="dark"] .theme_toggle_icon-moon{
 }
 
 @media (max-width: 980px){
-  .theme_toggle{
+  .top_actions{
     top: 12px;
     right: 12px;
+    gap: 8px;
+  }
+  .action_toggle{
     width: 52px;
     height: 52px;
   }

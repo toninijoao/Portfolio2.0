@@ -1,9 +1,13 @@
+import { initLanguage } from "./i18n.js";
+
 const yearEl = document.getElementById("year");
 const btn = document.getElementById("themeToggle");
 const topbar = document.querySelector(".topbar");
 const hero = document.querySelector(".hero");
 const root = document.documentElement;
 const body = document.body;
+
+initLanguage();
 
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
@@ -12,19 +16,16 @@ if (yearEl) {
 function updateThemeButton(theme) {
   if (!btn) return;
 
-  const toggleText = btn.querySelector(".nav_toggleText");
-  const toggleIcon = btn.querySelector(".nav_toggleIcon");
   const isDark = theme === "dark";
-
-  if (toggleText) {
-    toggleText.textContent = isDark ? "Light" : "Dark";
-  }
-
-  if (toggleIcon) {
-    toggleIcon.textContent = isDark ? "☼" : "☾";
-  }
+  const isEn = root.getAttribute("data-lang") === "en";
 
   btn.setAttribute("aria-pressed", String(isDark));
+  btn.setAttribute(
+    "aria-label",
+    isDark
+      ? (isEn ? "Switch to light theme" : "Ativar tema claro")
+      : (isEn ? "Switch to dark theme" : "Ativar tema escuro")
+  );
 }
 
 function applyTheme(theme) {
